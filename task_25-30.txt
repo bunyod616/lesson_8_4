@@ -1,0 +1,53 @@
+26 = https://www.codewars.com/kata/5f8a15c06dbd530016be0c19/train/python = Duplicate sandwich
+
+def duplicate_sandwich(lst):
+    index_map = {}
+    
+    for i, element in enumerate(lst):
+        if element in index_map:
+            return lst[index_map[element] + 1:i]
+        else:
+            index_map[element] = i
+
+    return []
+
+27 = https://www.codewars.com/kata/56f5594a575d7d3c0e000ea0/train/python = Conference Traveller
+
+def conference_picker(citiesVisited, citiesOffered):
+    for city in citiesOffered:
+        if city not in citiesVisited:
+            return city
+    return 'No worthwhile conferences this year!'
+
+28 = vhttps://www.codewars.com/kata/5a15a4db06d5b6d33c000018/train/python = Sum of a nested list
+
+def sum_nested(lst):
+    total = 0
+    for element in lst:
+        if isinstance(element, list):
+            total += sum_nested(element)
+        else:
+            total += element
+    return total
+
+29 = https://www.codewars.com/kata/5aa20a964a6b34417c00008d/train/python = Disorganised page lists
+
+def find_page_number(pages):
+    incorrect_pages = []
+    expected_page = 1
+    for page in pages:
+        if page != expected_page:
+            incorrect_pages.append(page)
+        else:
+            expected_page += 1
+    return incorrect_pages
+
+30 = https://www.codewars.com/kata/57a4a3e653ba3346bc000810/train/python = Describe a list
+
+def describe_list(lst):
+    if len(lst) == 0:
+        return "empty"
+    elif len(lst) == 1:
+        return "singleton"
+    else:
+        return "longer"
